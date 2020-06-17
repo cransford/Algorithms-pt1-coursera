@@ -1,1 +1,1 @@
-Week  homeowrk and basic sorting algorithms
+Week 2 homeowrk and basic sorting algorithms

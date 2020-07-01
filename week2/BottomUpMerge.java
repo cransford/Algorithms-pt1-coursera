@@ -38,7 +38,6 @@ public class BottomUpMerge {
 	
 	
 	private static boolean less(Comparable v, Comparable w) {
-		System.out.println("v is: " +v);
 		return v.compareTo(w) < 0;
 	}
 	

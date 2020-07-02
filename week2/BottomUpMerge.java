@@ -30,7 +30,7 @@ public class BottomUpMerge {
 			if(i > mid) a[k] = aux[j++];
 			else if(j > hi) a[k] = aux[i++];
 			else if (less(aux[j], aux[i])) a[k] = aux[j++];
-			else a[k] = a[i++];
+			else a[k] = aux[i++];
 		}
 		
 	}

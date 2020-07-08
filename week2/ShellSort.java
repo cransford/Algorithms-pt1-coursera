@@ -11,8 +11,6 @@ public class ShellSort {
 		
 		while(h >= 1) {
 			for(int j = h; j < a.length; j++) {
-				 //System.out.println(j);
-				// System.out.println(h);
 				for(int k = j; k >= h  && less(a[k], a[k-h]); k -= h) {
 					exch(a, k, k-h);
 				}

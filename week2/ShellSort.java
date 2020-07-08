@@ -1,16 +1,19 @@
 import edu.princeton.cs.algs4.StdRandom;
+import edu.princeton.cs.algs4.Stopwatch;
 
 public class ShellSort {
 
 	public static void sort(Comparable[] a) {
 		
-		//calculate h
+		//calculate h, the off set that will be used to h sort the array
 		int h = 1;
 		while(h < a.length/3) h = 3*h + 1;
 		
 		while(h >= 1) {
-			for(int j = h; j < a.length; j += h) {
-				for(int k = j; k > 0 && less(a[k], a[k-h]); k -= h) {
+			for(int j = h; j < a.length; j++) {
+				 //System.out.println(j);
+				// System.out.println(h);
+				for(int k = j; k >= h  && less(a[k], a[k-h]); k -= h) {
 					exch(a, k, k-h);
 				}
 			}
@@ -47,14 +50,17 @@ public class ShellSort {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		// TODO Auto-generated method 
-		Integer[] test = new Integer[10];
+		Integer[] test = new Integer[100000];
 		for(int i = 0; i < test.length; i++) {
-			test[i] = StdRandom.uniform(20);
+			test[i] = StdRandom.uniform(100);
 		}
-		printArray(test);
+		
+		Stopwatch watch = new Stopwatch();
 		sort(test);
+		double time = watch.elapsedTime();
 		System.out.println(isSorted(test));
-		printArray(test);
+		
+		System.out.println(time);
 
 	
 
